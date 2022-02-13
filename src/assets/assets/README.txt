@@ -1,0 +1,1 @@
+This folder will use for all the assets what we are using in react-native. inside this folder you need to create two for a few folders(for me two folders. that’s for “fonts” and “images’’
