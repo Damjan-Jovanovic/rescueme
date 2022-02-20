@@ -1,24 +1,47 @@
 import React from 'react';
-import { SafeAreaView, Text, StyleSheet, ImageBackground } from 'react-native';
+import { SafeAreaView, Text, Button, Image, View, StyleSheet, ImageBackground } from 'react-native';
 
 function WelcomeScreen(props) {
     return (
-        <ImageBackground 
-            style={styles.background}
-            source={require("../assets/favicon.png")}
-            >
-            <SafeAreaView>
-                <Text>HELLO</Text>
-            </SafeAreaView>
+        <SafeAreaView style={stylesBackground.background}>
+            <Image
+                style={stylesMiddle.middle}
+                source={require('../assets/logoSeeThrough.png')}
+            ></Image>
 
-        </ImageBackground>
-        
+            <View style={stylesButton.btn}>
+                <Button 
+                    title='Connexion'
+                    //color etc
+                />
+                <Button title='Inscription'
+                
+                />
+            </View>
+        </SafeAreaView>
     );
 }
 
-const styles = StyleSheet.create({
+const stylesBackground = StyleSheet.create({
     background:{
-        flex:1
+        flex: 1,
+        backgroundColor: '#87CEEB',
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 })
+
+const stylesMiddle = StyleSheet.create({
+    middle:{
+        width: 300,
+        height: 300,
+    }
+})
+
+const stylesButton = StyleSheet.create({
+    btn:{
+        
+    }
+})
+
 export default WelcomeScreen;
