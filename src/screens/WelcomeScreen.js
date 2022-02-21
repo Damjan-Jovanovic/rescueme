@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaView, Text, Button, Image, View, StyleSheet, ImageBackground } from 'react-native';
 
+
 function WelcomeScreen(props) {
     return (
         <SafeAreaView style={stylesBackground.background}>
@@ -12,9 +13,11 @@ function WelcomeScreen(props) {
             <View style={stylesButton.btn}>
                 <Button 
                     title='Connexion'
+                    //onPress={() => navigate('LoginScreen')}
                     //color etc
                 />
-                <Button title='Inscription'
+                <Button 
+                    title='Inscription'
                 
                 />
             </View>
