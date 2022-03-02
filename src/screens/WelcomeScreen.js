@@ -1,6 +1,8 @@
 import React from 'react';
 import { SafeAreaView, Text, Button, Image, View, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
-
+import LoginScreen from './src/screens/LoginScreen';
+import { createStackNavigator, createAppContainer } from "react-navigation";
+import { NavigationContainer } from '@react-navigation/native';
 
 const WelcomeScreen = ({navigation}) => {
     return (
@@ -10,11 +12,8 @@ const WelcomeScreen = ({navigation}) => {
                 source={require('../assets/logoSeeThrough.png')}
             ></Image>
 
-
-            <TouchableOpacity  style={styleLoginButton.loginButton} 
-                onPress = {()=>navigation.navigate('Login')} 
-                title= 'Next Screen'>
-                    
+            <TouchableOpacity  style={styleLoginButton.loginButton} onPress = {()=>navigation.navigate('Login')} title= 'Next Screen'>
+                <View style={styleLoginButton.loginButton}><Text style={styleBtn.textButton}>Connexion</Text></View>
                 <View style={styleLoginButton.loginButton}>
                     <Text style={styleBtn.textButton}>
                         Connexion
@@ -22,7 +21,7 @@ const WelcomeScreen = ({navigation}) => {
                 </View>
 
             </TouchableOpacity>
-            
+
             <TouchableOpacity  style={styleLoginButton.registerButton}>
                 <View style={styleLoginButton.registerButton}>
                     <Text style={styleBtn.textButton}>
@@ -34,7 +33,6 @@ const WelcomeScreen = ({navigation}) => {
         </SafeAreaView>
     );
 }
-
 
 const stylesBackground = StyleSheet.create({
     background:{
