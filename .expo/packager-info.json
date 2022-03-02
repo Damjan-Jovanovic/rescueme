@@ -2,15 +2,5 @@
   "devToolsPort": 19002,
   "expoServerPort": null,
   "packagerPort": 19000,
-  "webpackServerPort": 19006,
-<<<<<<< HEAD
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
-=======
-  "expoServerNgrokUrl": "https://rp-kfu.anonymous.rescueme.exp.direct",
-  "packagerNgrokUrl": "https://rp-kfu.anonymous.rescueme.exp.direct",
-  "ngrokPid": 19288,
->>>>>>> 150527d27ff0a3db86f4b23e3ac848fd48c52064
-  "packagerPid": null
+  "webpackServerPort": 19006
 }
