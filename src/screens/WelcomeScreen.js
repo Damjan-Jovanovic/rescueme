@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaView, Text, Button, Image, View, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
 
 
-function WelcomeScreen(props) {
+const WelcomeScreen = ({navigation}) => {
     return (
         <SafeAreaView style={stylesBackground.background}>
             <Image
@@ -10,8 +10,9 @@ function WelcomeScreen(props) {
                 source={require('../assets/logoSeeThrough.png')}
             ></Image>
 
-            <TouchableOpacity  style={styleLoginButton.loginButton}>
-                <View style={styleLoginButton.loginButton}><Text style={styleBtn.textButton}>Connexion</Text></View> 
+            <TouchableOpacity  style={styleLoginButton.loginButton} onPress = {()=>navigation.navigate('Login')} title= 'Next Screen'>
+                <View style={styleLoginButton.loginButton}><Text style={styleBtn.textButton}>Connexion</Text></View>
+                 
             </TouchableOpacity>
             
             <TouchableOpacity  style={styleLoginButton.registerButton}>
