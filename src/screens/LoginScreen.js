@@ -3,11 +3,16 @@ import { SafeAreaView, Text, Button, Image, View, StyleSheet, ImageBackground } 
 
 function LoginScreen(props) {
     return (
-        <SafeAreaView style={stylesBackground.background}>
+        <SafeAreaView style={styles.background}>
 
-            <View style={stylesHeader.header}>
+            <Image
+                style={styles.middle}
+                source={require('../assets/logoSeeThrough.png')}
+            ></Image>
+
+            <View style={styles.header}>
                 <Image
-                    style={stylesImage.image}
+                    style={styles.image}
                     source={require('../assets/logoSeeThrough.png')}
                 
                 ></Image>
@@ -24,23 +29,24 @@ function LoginScreen(props) {
     );
 }
 
-const stylesBackground = StyleSheet.create({
+const styles = StyleSheet.create({
     background:{
         backgroundColor: '#87CEEB',
-    }
-})
-const stylesHeader = StyleSheet.create({
+    },
+    space: {
+        width: 20, // or whatever size you need
+        height: 20,
+    },
     header:{
         backgroundColor: '#87CEEB',
-    }
-})
-const stylesImage = StyleSheet.create({
+    },
     image:{
-        justifyContent: 'left',
-        alignItems: 'left',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
         width: 50,
         height: 50,
     }
 })
+
 
 export default LoginScreen;
