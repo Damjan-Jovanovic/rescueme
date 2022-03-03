@@ -1,5 +1,6 @@
 import React from 'react';
 import { SafeAreaView, Text, Button, Image, View, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
+import colors from '../config/colors';
 
 const WelcomeScreen = ({navigation}) => {
     return (
@@ -9,12 +10,14 @@ const WelcomeScreen = ({navigation}) => {
                 source={require('../assets/logoSeeThrough.png')}
             ></Image>
 
+            <TouchableOpacity  style={styleLoginButton.loginButton} 
+                onPress = {()=>navigation.navigate('Connexion')} title= 'Next Screen'>
 
-
-
-            <TouchableOpacity  style={styleLoginButton.loginButton} onPress = {()=>navigation.navigate('Login')} title= 'Next Screen'>
-                <View style={styleLoginButton.loginButton}><Text style={styleBtn.textButton}>Connexion</Text></View>
-
+                <View style={styleLoginButton.loginButton}>
+                    <Text style={styleBtn.textButton}>
+                        Connexion
+                    </Text>
+                </View>
             </TouchableOpacity>
 
             <View style={styles.space}></View>
@@ -36,7 +39,7 @@ const WelcomeScreen = ({navigation}) => {
 const stylesBackground = StyleSheet.create({
     background:{
         flex: 1,
-        backgroundColor: '#87CEEB',
+        backgroundColor: colors.primaryBackground,
         justifyContent: 'flex-end',
         alignItems: 'center',
         textAlign: 'center',
@@ -47,7 +50,7 @@ const styles = StyleSheet.create({
   space: {
     width: 20, // or whatever size you need
     height: 20,
-  },
+  }
 })
 
 const stylesMiddle = StyleSheet.create({

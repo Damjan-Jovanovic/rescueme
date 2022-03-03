@@ -15,9 +15,9 @@ const MyStack = () => {
         <Stack.Screen
           name="WelcomeScreen"
           component={WelcomeScreen}
-          options={{ title: 'Welcome' }}
+          options={{ title: 'Bienvenue' }}
         />
-        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Connexion" component={LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

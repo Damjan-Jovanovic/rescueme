@@ -1,52 +1,32 @@
 import React from 'react';
 import { SafeAreaView, Text, Button, Image, View, StyleSheet, ImageBackground } from 'react-native';
+import colors from '../config/colors';
 
-function LoginScreen(props) {
+const LoginScreen=({props}) =>{
     return (
-        <SafeAreaView style={styles.background}>
-
+        <SafeAreaView style={stylesBackground.background}>
             <Image
-                style={styles.middle}
+                style={stylesHeader.image}
                 source={require('../assets/logoSeeThrough.png')}
             ></Image>
-
-            <View style={styles.header}>
-                <Image
-                    style={styles.image}
-                    source={require('../assets/logoSeeThrough.png')}
-                
-                ></Image>
-                <Text>
-                    RESCUE ME
-                </Text>
-            </View>
-
-            <View>
-                    
-            </View> 
 
         </SafeAreaView>
     );
 }
 
-const styles = StyleSheet.create({
+const stylesBackground = StyleSheet.create({
     background:{
-        backgroundColor: '#87CEEB',
-    },
-    space: {
-        width: 20, // or whatever size you need
-        height: 20,
-    },
-    header:{
-        backgroundColor: '#87CEEB',
-    },
-    image:{
-        justifyContent: 'flex-start',
-        alignItems: 'flex-start',
-        width: 50,
-        height: 50,
+        backgroundColor: colors.primaryBackground,
     }
 })
 
+const stylesHeader = StyleSheet.create({
+    image:{
+        width: 100,
+        height: 100,
+        position: 'absolute',
+        top: 10
+    }
+})
 
 export default LoginScreen;
