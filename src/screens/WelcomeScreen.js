@@ -22,7 +22,8 @@ const WelcomeScreen = ({navigation}) => {
 
             <View style={styles.space}></View>
 
-            <TouchableOpacity  style={styleLoginButton.registerButton}>
+            <TouchableOpacity  style={styleLoginButton.registerButton}
+            onPress = {()=>navigation.navigate('Inscription')} title= 'Next Screen'>
                 <View style={styleLoginButton.registerButton}>
                     <Text style={styleBtn.textButton}>
                         Inscription

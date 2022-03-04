@@ -9,7 +9,7 @@ const LoginScreen=({props}) =>{
             <Center w="100%">
             <Box safeArea p="2" py="8" w="90%" maxW="290">
                 <Heading size="lg" fontWeight="600" color="coolGray.800" _dark={{
-                color: "warmGray.50"
+                color: colors.primaryBackground
             }}>
                 Welcome
                 </Heading>
@@ -21,35 +21,35 @@ const LoginScreen=({props}) =>{
 
                 <VStack space={3} mt="5">
                 <FormControl>
-                    <FormControl.Label>Email ID</FormControl.Label>
+                    <FormControl.Label>Email</FormControl.Label>
                     <Input />
                 </FormControl>
                 <FormControl>
-                    <FormControl.Label>Password</FormControl.Label>
+                    <FormControl.Label>Mot de passe</FormControl.Label>
                     <Input type="password" />
                     <Link _text={{
                     fontSize: "xs",
                     fontWeight: "500",
                     color: "indigo.500"
                 }} alignSelf="flex-end" mt="1">
-                    Forget Password?
+                    Mot de passe oublié ?
                     </Link>
                 </FormControl>
                 <Button mt="2" colorScheme="indigo">
-                    Sign in
+                    Connexion
                 </Button>
                 <HStack mt="6" justifyContent="center">
                     <Text fontSize="sm" color="coolGray.600" _dark={{
                     color: "warmGray.200"
                 }}>
-                    I'm a new user.{" "}
+                    Je n'ai pas encore de compte.{" "}
                     </Text>
                     <Link _text={{
                     color: "indigo.500",
                     fontWeight: "medium",
                     fontSize: "sm"
                 }} href="#">
-                    Sign Up
+                    Inscription
                     </Link>
                 </HStack>
                 </VStack>
