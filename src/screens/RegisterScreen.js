@@ -4,7 +4,9 @@ import colors from '../config/colors';
 import { NativeBaseProvider, Center, Heading, VStack, FormControl, Input, Link, Button, HStack, Text, Box } from 'native-base';
 
 const RegisterScreen = ({navigation}) => {
-    return <Center w="100%">
+    return (
+      <NativeBaseProvider style={stylesBackground.background}>
+        <Center w="100%">
       <Box safeArea p="2" w="90%" maxW="290" py="8">
         <Heading size="lg" color="coolGray.800" _dark={{
         color: "warmGray.50"
@@ -35,6 +37,7 @@ const RegisterScreen = ({navigation}) => {
         </VStack>
       </Box>
     </Center>;
+    </NativeBaseProvider>);
 };
 
 
