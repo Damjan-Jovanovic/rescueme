@@ -11,12 +11,12 @@ const LoginScreen=({props}) =>{
                 <Heading size="lg" fontWeight="600" color="coolGray.800" _dark={{
                 color: colors.primaryBackground
             }}>
-                Welcome
+                Connexion
                 </Heading>
                 <Heading mt="1" _dark={{
                 color: "warmGray.200"
             }} color="coolGray.600" fontWeight="medium" size="xs">
-                Sign in to continue!
+                Connectez-vous pour continuer!
                 </Heading>
 
                 <VStack space={3} mt="5">
