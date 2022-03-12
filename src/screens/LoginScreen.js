@@ -2,8 +2,9 @@ import React from 'react';
 import { SafeAreaView, Image, View, StyleSheet, ImageBackground } from 'react-native';
 import colors from '../config/colors';
 import { NativeBaseProvider, Center, Heading, VStack, FormControl, Input, Link, Button, HStack, Text, Box } from 'native-base';
+import { useLinkProps } from '@react-navigation/native';
 
-const LoginScreen=({props}) =>{
+const LoginScreen=({ navigation }) =>{
     return (
         <NativeBaseProvider style={stylesBackground.background}>
             <Center w="100%">
@@ -44,11 +45,14 @@ const LoginScreen=({props}) =>{
                 }}>
                     Je n'ai pas encore de compte.{" "}
                     </Text>
-                    <Link _text={{
+                    <Link 
+                    onPress = {()=>navigation.navigate('Inscription')} title= 'Next Screen'
+                    _text={{
                     color: "indigo.500",
                     fontWeight: "medium",
                     fontSize: "sm"
-                }} href="#">
+                }}
+                    >
                     Inscription
                     </Link>
                 </HStack>

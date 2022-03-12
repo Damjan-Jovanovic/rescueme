@@ -32,7 +32,9 @@ const RegisterScreenOne = ({ navigation }) => {
                             <FormControl.Label>Confirm Password</FormControl.Label>
                             <Input type="password" />
                         </FormControl>
-                        <Button mt="2" colorScheme="indigo">
+                        <Button
+                            onPress = {()=>navigation.navigate('InscriptionTwo')} title= 'Next Screen' 
+                            mt="2" colorScheme="indigo">
                             Sign up
                         </Button>
                     </VStack>
