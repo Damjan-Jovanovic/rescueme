@@ -36,7 +36,9 @@ const LoginScreen=({ navigation }) =>{
                     Mot de passe oublié ?
                     </Link>
                 </FormControl>
-                <Button mt="2" colorScheme="indigo">
+                <Button 
+                    onPress = {()=>navigation.navigate('Home')} title= 'Next Screen'
+                    mt="2" colorScheme="indigo">
                     Connexion
                 </Button>
                 <HStack mt="6" justifyContent="center">
