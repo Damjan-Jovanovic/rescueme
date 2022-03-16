@@ -36,17 +36,17 @@ function Component(props) {
 
 const getIcon = (screenName) => {
   switch (screenName) {
-    case "Inbox":
+    case "Profile":
       return "email";
-    case "Outbox":
+    case "Home":
       return "send";
-    case "Favorites":
+    case "Community":
       return "heart";
-    case "Archive":
+    case "Setting":
       return "archive";
-    case "Trash":
+    case "Invite member":
       return "trash-can";
-    case "Spam":
+    case "Premium":
       return "alert-circle";
     default:
       return undefined;
@@ -103,35 +103,9 @@ function CustomDrawerContent(props) {
             ))}
           </VStack>
           <VStack space="5">
-            <Text fontWeight="500" fontSize="14" px="5" color="gray.500">
-              Labels
-            </Text>
             <VStack space="3">
-              <Pressable px="5" py="3">
-                <HStack space="7" alignItems="center">
-                  <Icon
-                    color="gray.500"
-                    size="5"
-                    as={<MaterialCommunityIcons name="bookmark" />}
-                  />
-                  <Text color="gray.700" fontWeight="500">
-                    Family
-                  </Text>
-                </HStack>
-              </Pressable>
-              <Pressable px="5" py="2">
-                <HStack space="7" alignItems="center">
-                  <Icon
-                    color="gray.500"
-                    size="5"
-                    as={<MaterialCommunityIcons name="bookmark" />}
-                  />
-                  <Text color="gray.700" fontWeight="500">
-                    Friends
-                  </Text>
-                </HStack>
-              </Pressable>
-              <Pressable px="5" py="3">
+              <Pressable px="5" py="3" onPress={() => props.navigation.navigate("Connexion")}>
+          
                 <HStack space="7" alignItems="center">
                   <Icon
                     color="gray.500"
@@ -139,7 +113,7 @@ function CustomDrawerContent(props) {
                     as={<MaterialCommunityIcons name="bookmark" />}
                   />
                   <Text fontWeight="500" color="gray.700">
-                    Work
+                    Logout
                   </Text>
                 </HStack>
               </Pressable>
@@ -158,12 +132,12 @@ function MyDrawer() {
       <Drawer.Navigator
         drawerContent={(props) => <CustomDrawerContent {...props} />}
       >
-        <Drawer.Screen name="Inbox" component={Component} />
-        <Drawer.Screen name="Outbox" component={Component} />
-        <Drawer.Screen name="Favorites" component={Component} />
-        <Drawer.Screen name="Archive" component={Component} />
-        <Drawer.Screen name="Trash" component={Component} />
-        <Drawer.Screen name="Spam" component={Component} />
+        <Drawer.Screen name="Profile" component={Component} />
+        <Drawer.Screen name="Home" component={Component} />
+        <Drawer.Screen name="Setting" component={Component} />
+        <Drawer.Screen name="Community" component={Component} />
+        <Drawer.Screen name="Invite member" component={Component} />
+        <Drawer.Screen name="Premium" component={Component} />
       </Drawer.Navigator>
     </Box>
     </NativeBaseProvider>
