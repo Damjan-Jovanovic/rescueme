@@ -1,8 +1,7 @@
 import React from 'react';
-import { SafeAreaView, Image, View, StyleSheet, ImageBackground } from 'react-native';
+import {StyleSheet } from 'react-native';
 import colors from '../config/colors';
 import { NativeBaseProvider, Center, Heading, VStack, FormControl, Input, Link, Button, HStack, Text, Box } from 'native-base';
-import { useLinkProps } from '@react-navigation/native';
 
 const LoginScreen=({ navigation }) =>{
     return (

@@ -9,7 +9,7 @@ import RegisterScreenTwo from './src/screens/RegisterScreenTwo';
 import HomeScreen from './src/screens/HomeScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import 'react-native-gesture-handler';
+//import 'react-native-gesture-hannpm indler';
 
 const Stack = createNativeStackNavigator();
 const MyStack = () => {

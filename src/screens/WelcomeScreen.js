@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, Text, Button, Image, View, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
+import { SafeAreaView, Text, Image, View, StyleSheet, TouchableOpacity } from 'react-native';
 import colors from '../config/colors';
 
 const WelcomeScreen = ({navigation}) => {

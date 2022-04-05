@@ -1,8 +1,7 @@
 import React from "react";
-import { SafeAreaView, Image, View, StyleSheet, ImageBackground } from "react-native";
+import { StyleSheet } from "react-native";
 import colors from "../config/colors";
-import { NativeBaseProvider, Center, Heading, VStack, FormControl, Input, Link, Button, HStack, Box, Text, Icon, Stack } from "native-base";
-import { Ionicons } from "@native-base/icons";
+import { NativeBaseProvider, Center, Heading, VStack, FormControl, Input, Button, Box } from "native-base";
 
 const RegisterScreenOne = ({ navigation }) => {
     return (
