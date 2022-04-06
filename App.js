@@ -16,15 +16,11 @@ const MyStack = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
-          name="WelcomeScreen"
-          component={WelcomeScreen}
-          options={{ title: 'Welcome' }}
-        />
+        <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} options={{ headerShown: false }}  />
         <Stack.Screen name="Connexion" component={LoginScreen} />
         <Stack.Screen name="Inscription" component={RegisterScreenOne} />
         <Stack.Screen name="InscriptionTwo" component={RegisterScreenTwo} />
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home" options={{ headerShown: false }} component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

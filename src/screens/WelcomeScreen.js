@@ -1,46 +1,55 @@
 import React from 'react';
-import { SafeAreaView, Text, Image, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { SafeAreaView, Text, Image, View, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import colors from '../config/colors';
 
-const WelcomeScreen = ({navigation}) => {
+const WelcomeScreen = ({ navigation }) => {
     return (
-        <SafeAreaView style={stylesBackground.background}>
-            <Image
-                style={stylesMiddle.middle}
-                source={require('../assets/logoSeeThrough.png')}
-            ></Image>
+        <ImageBackground source={require("../assets/bg.png")} style={{
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'deepskyblue ',
+            flex: 1,
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+            textAlign: 'center',
+        }}>
+            <SafeAreaView style={stylesBackground.background}>
+                <Image
+                    style={stylesMiddle.middle}
+                    source={require('../assets/logoSeeThrough.png')}
+                ></Image>
 
-            <TouchableOpacity  style={styleLoginButton.loginButton} 
-                onPress = {()=>navigation.navigate('Connexion')} title= 'Next Screen'>
+                <TouchableOpacity style={styleLoginButton.loginButton}
+                    onPress={() => navigation.navigate('Connexion')} title='Next Screen'>
 
-                <View style={styleLoginButton.loginButton}>
-                    <Text style={styleBtn.textButton}>
-                        Connexion
-                    </Text>
-                </View>
-            </TouchableOpacity>
+                    <View style={styleLoginButton.loginButton}>
+                        <Text style={styleBtn.textButton}>
+                            Connexion
+                        </Text>
+                    </View>
+                </TouchableOpacity>
 
-            <View style={styles.space}></View>
+                <View style={styles.space}></View>
 
-            <TouchableOpacity  style={styleLoginButton.registerButton}
-            onPress = {()=>navigation.navigate('Inscription')} title= 'Next Screen'>
-                <View style={styleLoginButton.registerButton}>
-                    <Text style={styleBtn.textButton}>
-                        Inscription
-                    </Text>
-                </View>
-            </TouchableOpacity>
+                <TouchableOpacity style={styleLoginButton.registerButton}
+                    onPress={() => navigation.navigate('Inscription')} title='Next Screen'>
+                    <View style={styleLoginButton.registerButton}>
+                        <Text style={styleBtn.textButton}>
+                            Inscription
+                        </Text>
+                    </View>
+                </TouchableOpacity>
 
-            <View style={styles.space}></View>
+                <View style={styles.space}></View>
+            </SafeAreaView>
+        </ImageBackground>
 
-        </SafeAreaView>
     );
 }
 
 const stylesBackground = StyleSheet.create({
-    background:{
+    background: {
         flex: 1,
-        backgroundColor: colors.primaryBackground,
         justifyContent: 'flex-end',
         alignItems: 'center',
         textAlign: 'center',
@@ -48,44 +57,44 @@ const stylesBackground = StyleSheet.create({
 })
 
 const styles = StyleSheet.create({
-  space: {
-    width: 20, // or whatever size you need
-    height: 20,
-  }
+    space: {
+        width: 20, // or whatever size you need
+        height: 20,
+    }
 })
 
 const stylesMiddle = StyleSheet.create({
-    middle:{
+    middle: {
         width: 200,
         height: 200,
         position: 'absolute',
-        top: 50
+        top: 50,
     }
 })
 
 const styleLoginButton = StyleSheet.create({
-    loginButton:{
+    loginButton: {
         width: 300,
         height: 70,
         borderRadius: 30,
         backgroundColor: '#fc5c65',
         justifyContent: 'center',
     },
-    registerButton:{
+    registerButton: {
         width: 300,
         height: 70,
         borderRadius: 30,
         backgroundColor: "#4ecdc4",
-        justifyContent: 'center'
+        justifyContent: 'center',
     }
 })
 
 const styleBtn = StyleSheet.create({
-    textButton:{
+    textButton: {
         fontSize: 20,
         textAlign: 'center',
         fontWeight: 'bold',
-        color: 'white'
+        color: 'white',
 
     }
 })
