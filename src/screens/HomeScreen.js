@@ -5,18 +5,74 @@ import {
 } from "@react-navigation/drawer";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import {NativeBaseProvider,Box,Pressable,VStack,Text,Center,HStack,Divider,Icon} from "native-base";
+import {Image, StyleSheet, Alert, SafeAreaView, View} from "react-native";
+import SwipeButton from 'rn-swipe-button';
+import colors from '../config/colors';
+
 const Drawer = createDrawerNavigator();
+
+//Main function
 function Component(props) {
   return (
     <NativeBaseProvider>
       <Center>
-        <Text mt="12" fontSize="18">
-          This is {props.route.name} page.
-        </Text>
+        <Image 
+            style={styles.tinyLogo}
+            source={require("../assets/profil.png")}
+          >
+          </Image>
+          <Text mt="12" fontSize="18">
+            This is {props.route.name} page. 
+            User name ...
+          </Text>
+          <Text>
+            If premium or junior = display info
+          </Text>
+      </Center>
+
+      {/* Swipe button for Alert */}
+      <Center>
+        
+          <SwipeButton
+          style={styles.swipebtn}
+            disabled={false}
+            //disable the button by doing true (Optional)
+            swipeSuccessThreshold={70}
+            height={45}
+            //height of the button (Optional)
+            width={330}
+            //width of the button (Optional)
+            title="Trigger the Alarm !"
+            //Text inside the button (Optional)
+            //thumbIconImageSource={thumbIcon}
+            //You can also set your own icon (Optional)
+            onSwipeSuccess={() => {
+              alert('Alarm activated!');
+            }}
+            //After the completion of swipe (Optional)
+            railFillBackgroundColor="#0066CC" //(Optional)
+            //railFillBorderColor="#007FFF" //(Optional)
+            thumbIconBackgroundColor="#007FFF" //(Optional)
+            thumbIconBorderColor="#0066CC" //(Optional)
+            railBackgroundColor="#FFFFFF" //(Optional)
+            railBorderColor="#007FFF" //(Optional)
+          />
+      
       </Center>
     </NativeBaseProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  tinyLogo: {
+    width: 100,
+    height: 100,
+  },
+  swipebtn: {
+    
+  },
+});
+
 
 const getIcon = (screenName) => {
   switch (screenName) {
@@ -37,6 +93,7 @@ const getIcon = (screenName) => {
   }
 };
 
+//Drawer component
 function CustomDrawerContent(props) {
   return (
     <NativeBaseProvider>
@@ -97,6 +154,24 @@ function CustomDrawerContent(props) {
                       as={<MaterialCommunityIcons name="bookmark" />}
                     />
                     <Text fontWeight="500" color="gray.700">
+                      Upgrade now
+                    </Text>
+                  </HStack>
+                </Pressable>
+              </VStack>
+            </VStack>
+
+            <VStack space="5">
+              <VStack space="3">
+                <Pressable px="5" py="3" onPress={() => props.navigation.navigate("Connexion")}>
+            
+                  <HStack space="7" alignItems="center">
+                    <Icon
+                      color="gray.500"
+                      size="5"
+                      as={<MaterialCommunityIcons name="bookmark" />}
+                    />
+                    <Text fontWeight="500" color="gray.700">
                       Logout
                     </Text>
                   </HStack>
@@ -109,6 +184,8 @@ function CustomDrawerContent(props) {
     </NativeBaseProvider>
   );
 }
+
+//Navigation with drawer
 function MyDrawer() {
   return (
     <NativeBaseProvider>

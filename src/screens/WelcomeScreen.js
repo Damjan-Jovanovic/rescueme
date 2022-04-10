@@ -12,13 +12,10 @@ const WelcomeScreen = ({ navigation }) => {
             justifyContent: 'flex-end',
             alignItems: 'center',
             textAlign: 'center',
+           
         }}>
             <SafeAreaView style={stylesBackground.background}>
-                <Image
-                    style={stylesMiddle.middle}
-                    source={require('../assets/logoSeeThrough.png')}
-                ></Image>
-
+                
                 <TouchableOpacity style={styleLoginButton.loginButton}
                     onPress={() => navigation.navigate('Connexion')} title='Next Screen'>
 

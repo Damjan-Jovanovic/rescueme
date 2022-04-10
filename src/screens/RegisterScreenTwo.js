@@ -42,17 +42,8 @@ const RegisterScreenTwo = ({ navigation }) => {
                   d'identité pour confirmer votre identité.
                 </Text>
                 <Stack direction={{ base: "column", md: "row", }} space={4} marginTop="2">
-                  <Button leftIcon={<Icon as={Ionicons} name="cloud-upload-outline" size="sm" />}>
-                    Carte d'identité
-                  </Button>
-                  <Center>
-                    <Text bold fontSize={"xs"}>
-                      ou
-                    </Text>
-                  </Center>
-
                   <Button variant="subtle" leftIcon={<Icon as={Ionicons} name="cloud-upload-outline" size="sm" />}>
-                    Passeport
+                    Carte d'identité ou Passeport 
                   </Button>
                 </Stack>
               </FormControl>

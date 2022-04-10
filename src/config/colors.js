@@ -1,3 +1,3 @@
 export default{
-    primaryBackground: '#A1C4FD',
+    primaryBackground: '#007FFF',
 }
