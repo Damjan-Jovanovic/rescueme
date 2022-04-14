@@ -38,7 +38,7 @@ function Component(props) {
             disabled={false}
             //disable the button by doing true (Optional)
             swipeSuccessThreshold={70}
-            height={45}
+            height={100}
             //height of the button (Optional)
             width={330}
             //width of the button (Optional)

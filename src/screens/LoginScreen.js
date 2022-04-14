@@ -36,7 +36,7 @@ const LoginScreen=({ navigation }) =>{
                     </Link>
                 </FormControl>
                 <Button 
-                    onPress = {()=>navigation.navigate('Home')} title= 'Next Screen'
+                    onPress = {()=>navigation.navigate('HomeScreen')} title= 'Next Screen'
                     mt="2" colorScheme="indigo">
                     Connexion
                 </Button>

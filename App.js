@@ -7,6 +7,7 @@ import WelcomeScreen from './src/screens/WelcomeScreen';
 import RegisterScreenOne from './src/screens/RegisterScreenOne';
 import RegisterScreenTwo from './src/screens/RegisterScreenTwo';
 import HomeScreen from './src/screens/HomeScreen';
+//import InviteContactScreen from './src/screens/InviteContactScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 //import 'react-native-gesture-hannpm indler';
@@ -20,7 +21,8 @@ const MyStack = () => {
         <Stack.Screen name="Connexion" component={LoginScreen} />
         <Stack.Screen name="Inscription" component={RegisterScreenOne} />
         <Stack.Screen name="InscriptionTwo" component={RegisterScreenTwo} />
-        <Stack.Screen name="Home" options={{ headerShown: false }} component={HomeScreen} />
+        <Stack.Screen name="HomeScreen" options={{ headerShown: false }} component={HomeScreen} />
+        {/*<Stack.Screen name="Invite member" component={InviteContactScreen} />*/}
       </Stack.Navigator>
     </NavigationContainer>
   );
