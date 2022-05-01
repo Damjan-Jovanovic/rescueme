@@ -38,11 +38,11 @@ function Component(props) {
             disabled={false}
             //disable the button by doing true (Optional)
             swipeSuccessThreshold={70}
-            height={100}
+            height={150}
             //height of the button (Optional)
             width={330}
             //width of the button (Optional)
-            title="Trigger the Alarm !"
+            title="Alarme !"
             //Text inside the button (Optional)
             //thumbIconImageSource={thumbIcon}
             //You can also set your own icon (Optional)
