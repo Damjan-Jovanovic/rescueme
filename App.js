@@ -6,7 +6,7 @@ import LoginScreen from './src/screens/LoginScreen';
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import RegisterScreenOne from './src/screens/RegisterScreenOne';
 import RegisterScreenTwo from './src/screens/RegisterScreenTwo';
-import HomeScreen from './src/screens/HomeScreen';
+import DrawerScreen from './src/screens/DrawerScreen';
 //import InviteContactScreen from './src/screens/InviteContactScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -21,8 +21,7 @@ const MyStack = () => {
         <Stack.Screen name="Connexion" component={LoginScreen} />
         <Stack.Screen name="Inscription" component={RegisterScreenOne} />
         <Stack.Screen name="InscriptionTwo" component={RegisterScreenTwo} />
-        <Stack.Screen name="HomeScreen" options={{ headerShown: false }} component={HomeScreen} />
-        {/*<Stack.Screen name="Invite member" component={InviteContactScreen} />*/}
+        <Stack.Screen name="DrawerScreen" options={{ headerShown: false }} component={DrawerScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,10 +1,10 @@
 {
   "webpackServerPort": null,
   "devToolsPort": 19002,
-  "expoServerPort": null,
+  "expoServerPort": 19000,
   "packagerPort": 19000,
   "packagerPid": null,
-  "expoServerNgrokUrl": "https://rp-kfu.anonymous.rescueme.exp.direct",
-  "packagerNgrokUrl": "https://packager.rp-kfu.anonymous.rescueme.exp.direct",
-  "ngrokPid": 17624
+  "expoServerNgrokUrl": "https://rp-kfu.maro47.rescueme.exp.direct",
+  "packagerNgrokUrl": "https://rp-kfu.maro47.rescueme.exp.direct",
+  "ngrokPid": 16328
 }
