@@ -61,7 +61,7 @@ function CustomDrawerContent(props) {
     <NativeBaseProvider>
       <DrawerContentScrollView {...props} safeArea>
         <VStack space="6" my="2" mx="1">
-          <Box px="4">
+          <Box px="8">
             <Text bold color="gray.700">
               Mail
             </Text>
@@ -153,14 +153,16 @@ function MyDrawer() {
     <NativeBaseProvider>
       <Box safeArea flex={1}>
         <Drawer.Navigator
+          openByDefault
+          initialRouteName="Profile"
+          hideStatusBar={false}
           drawerContent={(props, index) => <CustomDrawerContent {...props} />}
         >
-          <Drawer.Screen name="Profile" component={Component} />
-          <Drawer.Screen name="Home" component={HomeScreen} />
-          <Drawer.Screen name="Setting" component={Component} />
-          <Drawer.Screen name="Community" component={Component} />
-          <Drawer.Screen name="Invite member" component={InviteContactScreen} />
-          <Drawer.Screen name="Premium" component={Component} />
+          <Drawer.Screen name="Profile" options={{ headerStatusBarHeight: true }} component={HomeScreen} />
+          <Drawer.Screen name="Setting"  options={{ headerStatusBarHeight: false }}component={Component} />
+          <Drawer.Screen name="Community"  options={{ headerStatusBarHeight: false }}component={Component} />
+          <Drawer.Screen name="Invite member"  options={{ headerStatusBarHeight: false }}component={InviteContactScreen} />
+          <Drawer.Screen name="Premium"  options={{ headerStatusBarHeight: false }} component={Component} />
         </Drawer.Navigator>
       </Box>
     </NativeBaseProvider>
