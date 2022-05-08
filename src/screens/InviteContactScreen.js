@@ -1,23 +1,30 @@
 import React, { useEffect, useState} from 'react';
 import * as Contacts from 'expo-contacts';
 import { StyleSheet, View, Text, FlatList,TouchableOpacity } from 'react-native'
+import * as SMS from 'expo-sms';
+
+
 
 export default function App() {
+
   const [contacts, setContacts ] = useState([])
   useEffect(() => {
     (async () => {
       const { status } = await Contacts.requestPermissionsAsync();
+      
       if (status === 'granted') {
         const { data } = await Contacts.getContactsAsync({
           fields: [Contacts.Fields.PhoneNumbers],
         });
-
+ 
         if (data.length > 0) {
           setContacts(data)
-        }
+        }        
       }
+
     })();
   }, []);
+
 
   return (
     <View style={styles.container}>
@@ -29,11 +36,15 @@ export default function App() {
         initialNumToRender={Array.length}
         renderItem={({item, index}) => {
           return (
+
             <View style={styles.row}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => SMS.sendSMSAsync(
+                  item.phoneNumbers[0].number,
+                  'Partager par sms'
+                )}>
                 <Text style={styles.contactName}>{item.name}</Text>
-                <Text style={styles.contactum}> {item.phoneNumbers ? item.phoneNumbers[0].number : ''}</Text>
-            </TouchableOpacity>
+                  <Text  style={styles.contactum}> {item.phoneNumbers && item.phoneNumbers[0] && item.phoneNumbers[0].digits}</Text>
+                </TouchableOpacity>
           </View>
           )
         }}
