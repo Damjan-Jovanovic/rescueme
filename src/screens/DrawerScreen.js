@@ -5,11 +5,10 @@ import {
 } from "@react-navigation/drawer";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import {NativeBaseProvider,Box,Pressable,VStack,Text,Center,HStack,Divider,Icon} from "native-base";
-import {Image, StyleSheet, Alert, SafeAreaView, View} from "react-native";
-import SwipeButton from 'rn-swipe-button';
-import colors from '../config/colors';
+import {StyleSheet} from "react-native";
 import HomeScreen from './HomeScreen';
 import InviteContactScreen from './InviteContactScreen';
+
 
 const Drawer = createDrawerNavigator();
 
@@ -40,14 +39,12 @@ const getIcon = (screenName) => {
   switch (screenName) {
     case "Profile":
       return "email";
-    case "Home":
-      return "send";
+      case "Setting":
+        return "archive";
+      case "Invite member":
+        return "trash-can";
     case "Community":
       return "heart";
-    case "Setting":
-      return "archive";
-    case "Invite member":
-      return "trash-can";
     case "Premium":
       return "alert-circle";
     default:
@@ -82,7 +79,7 @@ function CustomDrawerContent(props) {
                       : "transparent"
                   }
                   onPress={(event) => {
-                    props.navigation.navigate(name);
+                    props.navigation.navigate(name, index);
                   }}
                 >
                   <HStack space="7" alignItems="center">
@@ -153,16 +150,15 @@ function MyDrawer() {
     <NativeBaseProvider>
       <Box safeArea flex={1}>
         <Drawer.Navigator
-          openByDefault
           initialRouteName="Profile"
           hideStatusBar={false}
-          drawerContent={(props, index) => <CustomDrawerContent {...props} />}
+          drawerContent={(props,index) => <CustomDrawerContent {...props} />}
         >
           <Drawer.Screen name="Profile" options={{ headerStatusBarHeight: true }} component={HomeScreen} />
-          <Drawer.Screen name="Setting"  options={{ headerStatusBarHeight: false }}component={Component} />
-          <Drawer.Screen name="Community"  options={{ headerStatusBarHeight: false }}component={Component} />
-          <Drawer.Screen name="Invite member"  options={{ headerStatusBarHeight: false }}component={InviteContactScreen} />
-          <Drawer.Screen name="Premium"  options={{ headerStatusBarHeight: false }} component={Component} />
+          <Drawer.Screen name="Setting" options={{ headerStatusBarHeight: false }}component={Component} />
+          <Drawer.Screen name="Community"options={{ headerStatusBarHeight: false }}component={Component} />
+          <Drawer.Screen name="Invite member" options={{ headerStatusBarHeight: false }}component={InviteContactScreen} />
+          <Drawer.Screen name="Premium" options={{ headerStatusBarHeight: false }} component={Component} />
         </Drawer.Navigator>
       </Box>
     </NativeBaseProvider>
