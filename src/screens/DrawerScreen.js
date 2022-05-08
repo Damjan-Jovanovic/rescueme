@@ -29,9 +29,9 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
   },
-  swipebtn: {
-    
-  },
+  styleMenu:{
+    backgroundColor: 'blue'
+  }
 });
 
 
@@ -56,7 +56,7 @@ const getIcon = (screenName) => {
 function CustomDrawerContent(props) {
   return (
     <NativeBaseProvider>
-      <DrawerContentScrollView {...props} safeArea>
+      <DrawerContentScrollView {...props} safeArea >
         <VStack space="6" my="2" mx="1">
           <Box px="8">
             <Text bold color="gray.700">

@@ -12,28 +12,28 @@ const RegisterScreenTwo = ({ navigation }) => {
   const cancelRef = React.useRef(null);
   return (
 
-    <NativeBaseProvider style={stylesBackground.background}>
-      <ScrollView>
+    <NativeBaseProvider>
+      <ScrollView bg="#e4e8ff">
         <Center w="100%">
-          <Box safeArea p="2" w="90%" maxW="290" py="8">
+          <Box safeArea p="2"  w="90%" maxW="290" py="8">
             <Heading size="lg" color="coolGray.800" _dark={{ color: "warmGray.50" }} fontWeight="semibold">
               Inscription
             </Heading>
-            <Heading mt="1" color="coolGray.600" _dark={{ color: "warmGray.200" }} fontWeight="medium" size="xs">
+            <Heading mt="1" color= "#013d77" _dark={{ color: "warmGray.200" }} fontWeight="medium" size="xs">
               Deuxième étape de l'inscription
             </Heading>
             <VStack space={3} mt="5">
-              <FormControl>
-                <FormControl.Label>Nom</FormControl.Label>
-                <Input />
+              <FormControl >
+                <FormControl.Label color="#013d77" >Nom</FormControl.Label>
+                <Input borderColor="#013d77"/>
               </FormControl>
               <FormControl>
-                <FormControl.Label>Prénom</FormControl.Label>
-                <Input />
+                <FormControl.Label color="#013d77" >Prénom</FormControl.Label>
+                <Input borderColor="#013d77"/>
               </FormControl>
               <FormControl>
                 <FormControl.Label>Date de naissance</FormControl.Label>
-                <Input />
+                <Input borderColor="#013d77"/>
               </FormControl>
               <FormControl>
                 <FormControl.Label>Vérification de l'identité</FormControl.Label>
@@ -59,13 +59,13 @@ const RegisterScreenTwo = ({ navigation }) => {
                 </Stack>
               </FormControl>
               <HStack space={4}>
-                <Checkbox shadow={2} size="sm" value="test" accessibilityLabel="This is a dummy checkbox" defaultIsChecked>
+                <Checkbox  shadow={2} size="sm" value="test" accessibilityLabel="This is a dummy checkbox" defaultIsChecked>
                   <Text fontSize={"xs"}>J'ai lu et j'accepte les conditions générales d'utilisation</Text>
                 </Checkbox>
               </HStack>
             </VStack>
             <Center>
-              <Button colorScheme="indigo" onPress={() => setIsOpen(!isOpen)}>
+              <Button bg="#013d77" onPress={() => setIsOpen(!isOpen)}>
                 Valider l'inscription
               </Button>
               <AlertDialog leastDestructiveRef={cancelRef} isOpen={isOpen} onClose={onClose}>
@@ -77,7 +77,7 @@ const RegisterScreenTwo = ({ navigation }) => {
                   </AlertDialog.Body>
                   <AlertDialog.Footer>
                     <Button.Group space={2}>
-                      <Button colorScheme="indigo" onPress={onClose}>
+                      <Button bg="#013d77" onPress={onClose}>
                         Compris !
                       </Button>
                     </Button.Group>
