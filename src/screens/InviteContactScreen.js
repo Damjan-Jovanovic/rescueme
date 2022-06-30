@@ -1,7 +1,8 @@
 import React, { useEffect, useState} from 'react';
 import * as Contacts from 'expo-contacts';
-import { StyleSheet, View, Text, FlatList,TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text, FlatList,TouchableOpacity, SafeAreaView } from 'react-native'
 import * as SMS from 'expo-sms';
+import { TextInput } from 'react-native-gesture-handler';
 
 
 
@@ -25,30 +26,67 @@ export default function App() {
     })();
   }, []);
 
+ /* searchContacts = value => {
+    const filteredContacts = this.state.inMemoryContacts.filter(contact => {
+      let contactLowercase = (
+        contact.firstName +
+        ' ' +
+        contact.lastName
+      ).toLowerCase();
+
+      let searchTermLowercase = value.toLowerCase();
+
+      return contactLowercase.indexOf(searchTermLowercase) > -1;
+    });
+    this.setState({ contacts: filteredContacts });
+  };*/
+
+
 
   return (
-    <View style={styles.container}>
-      <FlatList
-      /*style={{width: '80%'}}*/
-        keyExtractor={(item,index) => item.id.toString()} 
-        data={contacts}
-        
-        initialNumToRender={Array.length}
-        renderItem={({item, index}) => {
-          return (
 
-            <View style={styles.row}>
-              <TouchableOpacity onPress={() => SMS.sendSMSAsync(
-                  item.phoneNumbers[0].number,
-                  'Partager par sms'
-                )}>
-                <Text style={styles.contactName}>{item.name}</Text>
-                  <Text  style={styles.contactum}> {item.phoneNumbers && item.phoneNumbers[0] && item.phoneNumbers[0].digits}</Text>
-                </TouchableOpacity>
-          </View>
-          )
-        }}
-      />
+    <View style={{flex:1}}>
+        <TextInput
+          placeholder="Search"
+          placeholderTextColor="#dddddd"
+          style={{
+            paddingTop: 10,
+            backgroundColor: '#2f363c',
+            height: 50,
+            fontSize: 20,
+            padding: 15,
+            color: 'white',
+            borderBottomWidth: 0.5,
+            borderBottomColor: '#7d90a0'
+          }}
+          onChangeText={value => this.searchContacts(value)}
+        />
+    
+
+      <View style={styles.container}>
+        <FlatList
+        /*style={{width: '80%'}}*/
+          data={contacts}
+          keyExtractor={(item) => item.id.toString()} 
+          
+          
+          initialNumToRender={Array.length}
+          renderItem={({item}) => {
+            return (
+
+              <View style={styles.row}>
+                <TouchableOpacity onPress={() => SMS.sendSMSAsync(
+                    item.phoneNumbers[0].number,
+                    'Télécharge RescueMe'
+                  )}>
+                  <Text style={styles.contactName}>{item.name}</Text>
+                    <Text  style={styles.contactum}> {item.phoneNumbers && item.phoneNumbers[0] && item.phoneNumbers[0].digits}</Text>
+                  </TouchableOpacity>
+            </View>
+            )
+          }}
+        />
+      </View>
     </View>
   );
 }

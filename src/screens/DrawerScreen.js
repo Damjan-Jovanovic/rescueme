@@ -8,6 +8,7 @@ import {NativeBaseProvider,Box,Pressable,VStack,Text,Center,HStack,Divider,Icon}
 import {StyleSheet} from "react-native";
 import HomeScreen from './HomeScreen';
 import InviteContactScreen from './InviteContactScreen';
+import AbonnementScreen from './AbonnementScreen';
 
 
 const Drawer = createDrawerNavigator();
@@ -154,11 +155,11 @@ function MyDrawer() {
           hideStatusBar={false}
           drawerContent={(props,index) => <CustomDrawerContent {...props} />}
         >
-          <Drawer.Screen name="Profile" options={{ headerStatusBarHeight: true }} component={HomeScreen} />
-          <Drawer.Screen name="Setting" options={{ headerStatusBarHeight: false }}component={Component} />
-          <Drawer.Screen name="Community"options={{ headerStatusBarHeight: false }}component={Component} />
-          <Drawer.Screen name="Invite member" options={{ headerStatusBarHeight: false }}component={InviteContactScreen} />
-          <Drawer.Screen name="Premium" options={{ headerStatusBarHeight: false }} component={Component} />
+          <Drawer.Screen name="Profile"  component={HomeScreen} />
+          <Drawer.Screen name="Setting" component={Component} />
+          <Drawer.Screen name="Community" component={Component} />
+          <Drawer.Screen name="Invite member" component={InviteContactScreen} />
+          <Drawer.Screen name="Premium" component={AbonnementScreen} />
         </Drawer.Navigator>
       </Box>
     </NativeBaseProvider>
