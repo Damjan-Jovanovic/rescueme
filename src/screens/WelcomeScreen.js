@@ -60,14 +60,6 @@ const styles = StyleSheet.create({
     }
 })
 
-const stylesMiddle = StyleSheet.create({
-    middle: {
-        width: 200,
-        height: 200,
-        position: 'absolute',
-        top: 50,
-    }
-})
 
 const styleLoginButton = StyleSheet.create({
     loginButton: {

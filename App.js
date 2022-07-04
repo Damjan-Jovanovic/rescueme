@@ -7,6 +7,7 @@ import WelcomeScreen from './src/screens/WelcomeScreen';
 import RegisterScreenOne from './src/screens/RegisterScreenOne';
 import RegisterScreenTwo from './src/screens/RegisterScreenTwo';
 import DrawerScreen from './src/screens/DrawerScreen';
+import PaiementScreen from './src/screens/PaiementScreen';
 //import InviteContactScreen from './src/screens/InviteContactScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -22,6 +23,7 @@ const MyStack = () => {
         <Stack.Screen name="Inscription" component={RegisterScreenOne} />
         <Stack.Screen name="InscriptionTwo" component={RegisterScreenTwo} />
         <Stack.Screen name="DrawerScreen" options={{ headerShown: false }} component={DrawerScreen} />
+        <Stack.Screen name="Paiement" component={PaiementScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

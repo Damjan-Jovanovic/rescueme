@@ -9,6 +9,7 @@ import {StyleSheet} from "react-native";
 import HomeScreen from './HomeScreen';
 import InviteContactScreen from './InviteContactScreen';
 import AbonnementScreen from './AbonnementScreen';
+import CommunityScreen from './CommunityScreen';
 
 
 const Drawer = createDrawerNavigator();
@@ -157,7 +158,7 @@ function MyDrawer() {
         >
           <Drawer.Screen name="Profile"  component={HomeScreen} />
           <Drawer.Screen name="Setting" component={Component} />
-          <Drawer.Screen name="Community" component={Component} />
+          <Drawer.Screen name="Community" component={CommunityScreen} />
           <Drawer.Screen name="Invite member" component={InviteContactScreen} />
           <Drawer.Screen name="Premium" component={AbonnementScreen} />
         </Drawer.Navigator>
