@@ -6,7 +6,7 @@ const PaiementApp = () => {
   return (
    <SafeAreaView>
         <Text>
-            Something
+            Mettre en place le paiement
         </Text>
    </SafeAreaView>
   )

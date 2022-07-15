@@ -5,11 +5,11 @@ import {
 } from "@react-navigation/drawer";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import {NativeBaseProvider,Box,Pressable,VStack,Text,Center,HStack,Divider,Icon} from "native-base";
-import {StyleSheet} from "react-native";
 import HomeScreen from './HomeScreen';
 import InviteContactScreen from './InviteContactScreen';
 import AbonnementScreen from './AbonnementScreen';
 import CommunityScreen from './CommunityScreen';
+import SettingsScreen from './SettingsScreen';
 
 
 const Drawer = createDrawerNavigator();
@@ -25,17 +25,6 @@ function Component(props) {
       </Center>
   );
 }
-
-const styles = StyleSheet.create({
-  tinyLogo: {
-    width: 100,
-    height: 100,
-  },
-  styleMenu:{
-    backgroundColor: 'blue'
-  }
-});
-
 
 const getIcon = (screenName) => {
   switch (screenName) {
@@ -157,7 +146,7 @@ function MyDrawer() {
           drawerContent={(props,index) => <CustomDrawerContent {...props} />}
         >
           <Drawer.Screen name="Profile"  component={HomeScreen} />
-          <Drawer.Screen name="Setting" component={Component} />
+          <Drawer.Screen name="Setting" component={SettingsScreen} />
           <Drawer.Screen name="Community" component={CommunityScreen} />
           <Drawer.Screen name="Invite member" component={InviteContactScreen} />
           <Drawer.Screen name="Premium" component={AbonnementScreen} />
