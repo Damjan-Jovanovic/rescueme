@@ -1,12 +1,10 @@
 import React from 'react';
-import {NativeBaseProvider,Text,Center} from "native-base";
-import {Image, StyleSheet} from "react-native";
+import {NativeBaseProvider,Center, Text} from "native-base";
+import {Image, StyleSheet, TouchableOpacity, View} from "react-native";
 import SwipeButton from 'rn-swipe-button';
-import colors from '../config/colors';
  
-// import all the components we are going to use
- 
-const App = () => {
+ // param navigation utilisé uniquement pour pouvoir accéder à la partie Junior en mode test
+const App = ({ navigation }) => {
   return (
     <NativeBaseProvider>
       <Center>
@@ -52,6 +50,26 @@ const App = () => {
           />
       
       </Center>
+
+    {/* Composant à supprimé lors de création du backend. Utilisé pour test */}
+     <Center>
+        <TouchableOpacity style={styles.junior}
+          onPress={() => navigation.navigate('JuniorSummary')} title='Next Screen'>
+            <View >
+              <Text style={{
+                fontSize: 20,
+                textAlign: 'center',
+                fontWeight: 'bold',
+                color: 'white',
+              }}>
+                Junior
+              </Text>
+            </View>
+          
+        </TouchableOpacity>
+        
+
+      </Center>
     </NativeBaseProvider>
   );
 };
@@ -62,4 +80,13 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
   },
+  junior:{
+    marginTop: 130,
+    alignSelf: 'center',
+    width: 300,
+    height: 70,
+    borderRadius: 30,
+    backgroundColor: '#fc5c65',
+    justifyContent: 'center',
+  }
 });
