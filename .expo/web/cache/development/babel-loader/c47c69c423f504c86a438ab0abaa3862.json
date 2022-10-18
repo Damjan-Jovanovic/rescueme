@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default {\n  primaryBackground: '#007FFF'\n};","map":{"version":3,"sources":["C:/Users/Damja/Documents/GitHub/rescueme/src/config/colors.js"],"names":["primaryBackground"],"mappings":"AAAA,eAAc;AACVA,EAAAA,iBAAiB,EAAE;AADT,CAAd","sourcesContent":["export default{\r\n    primaryBackground: '#007FFF',\r\n}"]},"metadata":{},"sourceType":"module"}

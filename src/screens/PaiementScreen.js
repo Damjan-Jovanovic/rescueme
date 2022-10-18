@@ -1,14 +1,16 @@
-import { Button } from 'native-base';
+import { VStack, Center } from 'native-base';
 import React from 'react';
-import { SafeAreaView, Text, Image, View, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
+import { SafeAreaView, Text } from 'react-native';
 
 const PaiementApp = () => {
   return (
-   <SafeAreaView>
-        <Text>
-            Mettre en place le paiement
-        </Text>
-   </SafeAreaView>
+    <SafeAreaView>
+      <VStack space={4} alignItems="center">
+        <Center w="64" h="20" bg="indigo.300" rounded="md" shadow={3}>Test</Center>
+        <Center w="64" h="20" bg="indigo.500" rounded="md" shadow={3}></Center>
+        <Center w="64" h="20" bg="indigo.700" rounded="md" shadow={3}></Center>
+      </VStack>;
+    </SafeAreaView>
   )
 }
 
